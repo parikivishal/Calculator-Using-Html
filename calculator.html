@@ -1,94 +1,103 @@
-<!doctype html>
 <html>
 <head>
 <title>Calculator</title>
 <style>
-body{
-background:#7CB9E8;
+body
+{
+background-color:lightblue;
+margin-top:100px;
 }
-form{
-text-align:center;
-margin:0;
-}
-input[type="text"]{
-background:#bccd95;
-position:relative;
-width:250px;
-height:40px;
-font-size:21px; 
-}
-input[type="button"]{
-width:60px;
+#num
+{
 height:60px;
-font-size:21px; 
+width:60px;
 border-radius:10px;
+background-color:#fff;
 }
-.op{
-background:#696969;
-}
-.ac{
-background:tomato;
-}
-.eq{
-background:#1877F2;
-}
-.box{
-background:#3d4543;
-height:400px;
-width:350px;
-margin:auto;
-padding-top:20px;
+#op
+{
+height:60px;
+width:60px;
 border-radius:10px;
+background-color:orange;
 }
+#calc
+{
+border-radius:10px;
+height:50px;
+width:300px;
+text-align:right;
+font-size:25px;
+font-weight:bold;
+}
+#name
+{
+font-family:elephant;
+font-size:29px;
+text-transform:uppercase;
+color:red;
+}
+#op1
+{
+height:60px;
+width:60px;
+border-radius:10px;
+background-color:lightgreen;
+}
+#page
+{
+border-radius:10px;
+border:2px solid black;
+margin-left:450px;
+margin-right:450px;
+background-color:#F0F0F0;
+}
+
 </style>
-<script>
-function displ(val)
-{
-	document.getElementById("display").value+=val;
-}
-function clr()
-{
-	document.getElementById("display").value=""
-}
-function solve()
-{
- x=document.getElementById("display").value;
- y=eval(x);
-document.getElementById("display").value=y;
-}
-function enab(){
-document.getElementById("display").disabled=false;
-}
-function di(){
-document.getElementById("display").disabled=true
-}
-</script>
 </head>
 <body>
-<center><h1>CALCULATOR</h1></center>
-<form class="box">
-<input type="text" value="" id="display" disabled class="box_diplay"><br><br><br>
-<input type="button" value="Off" id="" onclick="di()"> 
-<input type="button" value="/"  class="op" id="" onclick="displ('/')">
-<input type="button" value="Clr" id="" onclick="clr()">
-<input type="button" value="AC" class="ac" id="" onclick="enab()"><br>
-<input type="button" value="7" id="" onclick="displ('7')"/>
-<input type="button" value="8" id="" onclick="displ('8')">
-<input type="button" value="9" id="" onclick="displ('9')">
-<input type="button" value="+" class="op" onclick="displ('+')"><br>
-<input type="button" value="6" id=""onclick="displ('6')">
-<input type="button" value="5" id="" onclick="displ('5')">
-<input type="button" value="4" id="" onclick="displ('4')">
-<input type="button" value="-" class="op" onclick="displ('-')"><br>
-<input type="button" value="3" id="" onclick="displ('3')">
-<input type="button" value="2" id="" onclick="displ('2')">
-<input type="button" value="1" id="" onclick="displ('1')">
-<input type="button" value="*" class="op"  onclick="displ('*')"><br>
-<input type="button" value="." id="" onclick="displ('.')">
-<input type="button" value="0" id="" onclick="displ('0')">
-<input type="button" value="%" class="op" onclick="displ('%')">
-<input type="button" value="=" class="eq" onclick="solve()">
-</form><br>
-<div align="right"><i><b>Designed By :Pariki Vishal</b></i></div>
+<script>
+function num(val)
+{
+document.getElementById("calc").value+=val;
+}
+function cle()
+{
+document.getElementById("calc").value="";
+}
+function ope()
+{
+x=document.getElementById("calc").value;
+y=eval(x);
+document.getElementById("calc").value=y;
+}
+
+</script>
+<center>
+<div id="page">
+<h1 id="name">Calculator</h1><hr>
+<input type="text" id="calc"  disabled><br><br>
+<input type="button" id="num" value="7" onclick="num(7)">
+<input type="button" id="num" value="8" onclick="num(8)">
+<input type="button" id="num" value="9" onclick="num(9)">
+<input type="button" id="op" value="+" onclick="num('+')">
+<input type="button" id="op1"value="ON" onclick="en()"><br>
+<input type="button" id="num" value="4" onclick="num(4)">
+<input type="button" id="num" value="5" onclick="num(5)">
+<input type="button" id="num" value="6" onclick="num(6)">
+<input type="button" id="op" value="-" onclick="num('-')">
+<input type="button"id="op1" value="OFF" onclick="di()"><br>
+<input type="button" id="num" value="1" onclick="num(1)">
+<input type="button" id="num" value="2" onclick="num(2)">
+<input type="button" id="num" value="3" onclick="num(3)">
+<input type="button" id="op" value="*" onclick="num('*')">
+<input type="button" id="op1" value="C" onclick="cle()"><br>
+<input type="button" id="num" value="0" onclick="num(0)">
+<input type="button" id="num" value="." onclick="num('.')">
+<input type="button" id="op" value="%" onclick="num('%')">
+<input type="button" id="op" value="/" onclick="num('/')">
+<input type="button" id="op1" value="=" onclick="ope()"><br><br>
+</div>
+</center>
 </body>
 </html>
